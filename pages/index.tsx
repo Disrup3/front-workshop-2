@@ -54,9 +54,9 @@ export default function Home() {
               <div className="flex flex-wrap mb-10 gap-10 mr-10 ml-10 pt-[5rem]">
 
                 <div className="flex-1">
-                  <h1 className=" text-[82px]  text-[#D9F40B]">Workshop</h1>
+                  <h1 className=" text-[82px]  text-[#D9F40B]">Buy Me a Coffee</h1>
 
-                  <p className="mt-5">Buy me a Coffe en ethereum</p>
+                  <p className="mt-5">Buy me a Coffe hecho con smart contracts en solidity</p>
 
                   <div className="flex flex-col mt-10">
                   { contractAddress.length > 1 &&  <p className="text-xl">Conectado a:

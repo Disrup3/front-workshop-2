@@ -43,7 +43,7 @@ const ClientList: FC<Props> = ({clientList}) => {
   return (        
 
         <div className="flex-1">        
-            <div className="rounded p-2 h-[60vh] overflow-scroll border-solid border-4 border-white/[0.4] flex flex-wrap justify-center mt-10">
+            <div className="rounded p-2 h-[60vh] overflow-scroll overflow-x-hidden border-solid border-4 border-white/[0.4] flex flex-wrap justify-center mt-10">
                 {clientList.map((team, i)  => (
                     <TeamCard key={i} client={team} selectClient={selectTeam} selectedClient={selectedClient} />
                 ))}
@@ -77,13 +77,13 @@ const TeamCard: FC<TeamProps> = ({client, selectClient, selectedClient}) => {
     return (
         <div 
             onClick={() => selectClient(Number(client.id))} 
-            className={`w-[100%]  cursor-pointer  flex items-center justify-between shadow-md rounded text-[18px] bg-white/[.08] m-3 p-5 ${selectedClient?.toString() === client.id.toString() && "bg-purple-600/[0.16]"}`}
+            className={`w-[100%] max-h-[150px]  cursor-pointer  flex items-center justify-between shadow-md rounded text-[18px] bg-white/[.08] m-3 p-5 ${selectedClient?.toString() === client.id.toString() && "bg-purple-600/[0.16]"}`}
         >   
-            <div>
-                <img className="w-[50px]" src={client.ulrImg} alt="imagen" />
-                <h3 className="text-center">{client.name}</h3>
+            <div className="flex flex-col items-center p-2">
+                <img className="w-[75px]" src={client.ulrImg} alt="imagen" />
+                <h3 className="text-center mt-1">{client.name}</h3>
             </div>
-            <p>{client.description}</p>
+            <p className="ml-5 mr-5">{client.description}</p>
             <p className={`m-3 ml-5 text-center ${Number(client.tipAmount) > 0 && " text-[#33E459]"}`}>{Number(client.tipAmount) > 0 ? ethers.utils.formatEther(client.tipAmount.toString()) : 0} ETH</p>            
         </div>
     )
