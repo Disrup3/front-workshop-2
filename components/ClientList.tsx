@@ -23,7 +23,7 @@ const ClientList: FC<Props> = ({clientList}) => {
         args: [selectedClient!],
         overrides: {            
             value: ethers.utils.parseEther(String(donationValue)),
-        }                
+        }              
     })
 
     const {write, data, error, isLoading, isSuccess} = useContractWrite(config)

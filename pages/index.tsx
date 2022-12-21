@@ -62,7 +62,7 @@ export default function Home() {
                   { contractAddress.length > 1 &&  <p className="text-xl">Conectado a:
                    <span className="ml-3 text-[#D9F40B]" >{contractAddress}</span></p> } 
 
-                    <p className="text-xl">Cantidad total apostada:
+                    <p className="text-xl">Cantidad total donada:
                      <span className="ml-3 text-purple-500">{ethers.utils.formatEther(String(AmountTotal))} eth </span>
                     </p>                    
                   </div>
